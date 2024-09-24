@@ -1,0 +1,231 @@
+html{
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(100deg  , green, yellow);
+
+}
+.a{
+    text-decoration: none;
+    font-size: .7rem;
+    color: rgb(0, 0, 0);
+    background-color: white;
+}
+.main{
+  padding-top: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.option{
+    transform: translateY(50%);
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+
+
+}
+/* .option a{
+    background: white;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border: 0;
+    height: 2rem;
+    width: 5rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}  */
+a.start{
+    background: white; 
+    font-size: 30px;
+    border-radius: 10px; 
+    height: 50px; 
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.disable{
+    color: gray;
+}
+.status{
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    
+
+}
+.container{
+    position: relative;
+    margin: 10px auto;
+}
+.board,.win{
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgb(33 33 33/25%);
+    background: white;
+    transition: transform .6s cubic-bezier(.4, .0, .2, 1);
+    backface-visibility: hidden; 
+}
+.board{
+
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgb(33 33 33/25%);
+    background:linear-gradient(100deg, yellow, green);
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-gap: 20px;
+
+}
+.container.flipped .board{
+    transform: rotateY(180deg);
+
+}
+.container.flipped .win{
+    transform: rotateY(0deg);
+}
+.card{
+    position: relative;
+    height: 130px;
+    width: 90px;
+    cursor: pointer;
+ }
+ .card-open,.card-close{
+  
+    position: absolute;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background: url(card.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform .6s cubic-bezier(.4, .0, .2, 1);
+    backface-visibility: hidden;
+   }
+   .card-close{
+    transform: rotateY(180deg);
+    font-size: 40px;
+    user-select: none;
+    text-align: center;
+    line-height: 100px;
+    background: white;
+   }
+.card.flipped .card-open{
+    transform: rotateY(180deg);
+}
+.card.flipped .card-open{
+    transform: rotateY(180deg);
+}
+.card.flipped .card-close{
+    transform: rotateY(0);
+}
+.win {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: white;
+    transform: rotateY(180deg);
+}
+.highlight{
+    color: pink;
+
+}
+
+.win-text{
+    display: flex;
+    align-items: center;
+    transform: translateY(50%);
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+}
+
+@media screen and (max-width:750px) {
+    .card{
+       
+        height: 85px;
+        width: 60px;
+       
+     }
+     a.start{
+        background: white; 
+        font-size: 26px;
+        border-radius: 10px; 
+        height: 45px; 
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        position: relative;
+        margin: 20px auto;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .card{
+       
+        height: 70px;
+        width: 45px;
+       
+     }
+     .card-close{
+       
+        font-size: 20px;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 50px;
+        background: white;
+       }
+       .board{
+
+        padding: 13px;}
+       a.start{
+        background: white; 
+        font-size: 23px;
+        border-radius: 10px; 
+        height: 40px; 
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .card{
+       
+        height: 60px;
+        width: 40px;
+       
+     }
+     .card-close{
+       
+        font-size: 17px;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 45px;
+        background: white;
+       }
+       .board{
+
+        padding: 10px;}
+        .container{
+            position: relative;
+            margin: 50px auto;
+        }
+}
